@@ -1,0 +1,21 @@
+name: CI runbook drill
+
+on:
+  push:
+    branches: [drill]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint check
+        run: |
+          echo "lint ok"
+
+  broken-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Broken test step
+        run: |
+          echo "DRILL_FAIL_MARKER"
+          exit 1
